@@ -102,6 +102,7 @@ export default function HomePage() {
                     product={product}
                     image={image}
                     colorHex={product.colors[0].hex}
+                    colorName={product.colors[0].name}
                     hoverScale
                   />
                 )}

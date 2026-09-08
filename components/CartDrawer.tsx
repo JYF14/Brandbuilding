@@ -98,7 +98,12 @@ export default function CartDrawer() {
                       onClick={() => setCartOpen(false)}
                       className="w-24 shrink-0"
                     >
-                      <ProductArt product={product} image={product.images[0]} colorHex={colorHex} />
+                      <ProductArt
+                        product={product}
+                        image={product.images[0]}
+                        colorHex={colorHex}
+                        colorName={line.colorName}
+                      />
                     </Link>
                     <div className="flex flex-1 flex-col justify-between">
                       <div>

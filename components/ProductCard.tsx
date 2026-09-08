@@ -20,13 +20,19 @@ export default function ProductCard({ product }: { product: Product }) {
       onMouseLeave={() => setHovered(false)}
     >
       <div className="relative overflow-hidden">
-        <ProductArt product={product} image={front} colorHex={activeColor.hex} hoverScale />
+        <ProductArt
+          product={product}
+          image={front}
+          colorHex={activeColor.hex}
+          colorName={activeColor.name}
+          hoverScale
+        />
         <div
           className={`absolute inset-0 transition-opacity duration-700 ${
             hovered ? "opacity-100" : "opacity-0"
           }`}
         >
-          <ProductArt product={product} image={worn} colorHex={activeColor.hex} />
+          <ProductArt product={product} image={worn} colorHex={activeColor.hex} colorName={activeColor.name} />
         </div>
         {product.isNew && (
           <span className="absolute left-3 top-3 bg-snow/90 px-2 py-1 text-[10px] uppercase tracking-luxury text-espresso">

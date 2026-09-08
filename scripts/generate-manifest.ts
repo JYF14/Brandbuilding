@@ -1,4 +1,5 @@
 import { PRODUCTS } from "../lib/products";
+import { productImagePath } from "../lib/image-path";
 import { writeFileSync } from "fs";
 import path from "path";
 
@@ -24,9 +25,24 @@ consistent with each other and with the rest of the catalogue.
 **Total products:** ${PRODUCTS.length}
 **Total images required:** ${PRODUCTS.length * 6} (6 shots × ${PRODUCTS.length} products)
 
-Recommended image spec: 2400 × 3000px (4:5), sRGB, exported as WebP or JPEG. Background:
+Recommended image spec: 2400 × 3000px (4:5), sRGB, exported as JPEG or WebP. Background:
 warm ivory / stone seamless for studio shots (Images 1, 2, 5); neutral macro backdrop for
 Images 3–4; natural alpine environment for Image 6.
+
+## How a real photo replaces a placeholder — no code changes needed
+
+Every product image on the site is resolved by \`components/ProductArt.tsx\` /
+\`components/ProductGallery.tsx\`. Both first try to load a real file at a fixed path
+under \`/public/products/\`; if that file doesn't exist (404), they silently fall back to
+the generated SVG placeholder. So to go live with a real photo, just save it — nothing
+else needs to change.
+
+**Path convention:** \`public/products/<slug>/<shot>--<colour-slug>.jpg\`
+
+Each entry below already prints the exact path to save that file at. \`<colour-slug>\` is
+the colour name lower-cased with spaces replaced by hyphens (e.g. "Warm Cream" →
+\`warm-cream\`). You can fill the catalogue in gradually, one file at a time — any shot
+without a matching file just keeps showing its placeholder.
 
 ---
 
@@ -47,8 +63,12 @@ for (const gender of ["women", "men", "accessories"] as const) {
     for (const image of product.images) {
       out += `**${SHOT_TITLES[image.shot]}**\n\n`;
       out += `> ${image.prompt}\n\n`;
+      out += `Save as: \`public${productImagePath(product.slug, image.shot, product.colors[0].name)}\`\n\n`;
     }
-    out += `Note: generate this same six-shot set once per additional colourway shown on the PDP, reusing the identical prompt with the colour name substituted, so garment cut, styling and background stay identical across every colour of a given product.\n`;
+    out += `Note: generate this same six-shot set once per additional colourway shown on the PDP (${product.colors
+      .slice(1)
+      .map((c) => c.name)
+      .join(", ") || "—"}), reusing the identical prompt with the colour name substituted. Save each set at \`public/products/${product.slug}/<shot>--<colour-slug>.jpg\` so garment cut, styling and background stay identical across every colour of this product.\n`;
   }
 }
 

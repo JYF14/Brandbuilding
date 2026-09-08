@@ -1,15 +1,19 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Product } from "@/lib/types";
 import ArtPlate from "./ArtPlate";
+import ProductArt from "./ProductArt";
+import { productImagePath } from "@/lib/image-path";
 
 export default function ProductGallery({
   product,
   colorHex,
+  colorName,
 }: {
   product: Product;
   colorHex: string;
+  colorName: string;
 }) {
   const [active, setActive] = useState(0);
   const [zoomed, setZoomed] = useState(false);
@@ -30,18 +34,7 @@ export default function ProductGallery({
               active === i ? "border-espresso" : "border-transparent hover:border-stone/50"
             }`}
           >
-            <div className="relative aspect-[4/5] bg-ivory">
-              <ArtPlate
-                seed={`${product.slug}-${img.shot}-${colorHex}`}
-                colorHex={colorHex}
-                silhouette={product.silhouette}
-                shot={img.shot}
-                productName={product.name}
-                shotLabel={img.alt}
-                location={product.location}
-                className="h-full w-full"
-              />
-            </div>
+            <ProductArt product={product} image={img} colorHex={colorHex} colorName={colorName} />
           </button>
         ))}
       </div>
@@ -60,15 +53,12 @@ export default function ProductGallery({
               zoomed ? "scale-[1.7]" : "scale-100"
             }`}
           >
-            <ArtPlate
-              seed={`${product.slug}-${current.shot}-${colorHex}`}
+            <MainImage
+              key={`${current.shot}-${colorName}`}
+              product={product}
+              image={current}
               colorHex={colorHex}
-              silhouette={product.silhouette}
-              shot={current.shot}
-              productName={product.name}
-              shotLabel={current.alt}
-              location={product.location}
-              className="h-full w-full"
+              colorName={colorName}
             />
           </div>
         </button>
@@ -82,20 +72,64 @@ export default function ProductGallery({
                 active === i ? "border-espresso" : "border-transparent"
               }`}
             >
-              <ArtPlate
-                seed={`${product.slug}-${img.shot}-${colorHex}`}
-                colorHex={colorHex}
-                silhouette={product.silhouette}
-                shot={img.shot}
-                productName={product.name}
-                shotLabel={img.alt}
-                location={product.location}
-                className="h-full w-full"
-              />
+              <ProductArt product={product} image={img} colorHex={colorHex} colorName={colorName} />
             </button>
           ))}
         </div>
       </div>
     </div>
+  );
+}
+
+function MainImage({
+  product,
+  image,
+  colorHex,
+  colorName,
+}: {
+  product: Product;
+  image: Product["images"][number];
+  colorHex: string;
+  colorName: string;
+}) {
+  const [photoFailed, setPhotoFailed] = useState(false);
+  const imgRef = useRef<HTMLImageElement>(null);
+  const photoSrc = productImagePath(product.slug, image.shot, colorName);
+
+  useEffect(() => {
+    // See ProductArt.tsx: a fast local 404 can resolve before React
+    // hydrates and attaches onError, so check the already-failed case too.
+    const el = imgRef.current;
+    if (el && el.complete && el.naturalWidth === 0) {
+      setPhotoFailed(true);
+    }
+  }, [photoSrc]);
+
+  if (!photoFailed) {
+    return (
+      // Convention-based optional asset that may not exist yet — onError
+      // falls back to the placeholder below.
+      // eslint-disable-next-line @next/next/no-img-element
+      <img
+        ref={imgRef}
+        src={photoSrc}
+        alt={image.alt}
+        onError={() => setPhotoFailed(true)}
+        className="h-full w-full object-cover"
+      />
+    );
+  }
+
+  return (
+    <ArtPlate
+      seed={`${product.slug}-${image.shot}-${colorHex}`}
+      colorHex={colorHex}
+      silhouette={product.silhouette}
+      shot={image.shot}
+      productName={product.name}
+      shotLabel={image.alt}
+      location={product.location}
+      className="h-full w-full"
+    />
   );
 }

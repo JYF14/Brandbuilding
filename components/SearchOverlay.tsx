@@ -95,6 +95,7 @@ export default function SearchOverlay() {
                     product={product}
                     image={product.images[0]}
                     colorHex={product.colors[0].hex}
+                    colorName={product.colors[0].name}
                     hoverScale
                   />
                   <p className="mt-3 text-[13px] leading-snug">{product.name}</p>

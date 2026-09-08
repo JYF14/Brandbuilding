@@ -49,7 +49,12 @@ export default function CheckoutPage() {
               return (
                 <div key={`${line.productSlug}-${line.colorName}-${line.size}`} className="flex gap-5 py-6">
                   <div className="w-20 shrink-0">
-                    <ProductArt product={product} image={product.images[0]} colorHex={colorHex} />
+                    <ProductArt
+                      product={product}
+                      image={product.images[0]}
+                      colorHex={colorHex}
+                      colorName={line.colorName}
+                    />
                   </div>
                   <div className="flex flex-1 items-center justify-between">
                     <div>

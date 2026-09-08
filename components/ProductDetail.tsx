@@ -78,7 +78,7 @@ export default function ProductDetail({ product }: { product: Product }) {
       </div>
 
       <div className="grid grid-cols-1 gap-10 px-5 lg:grid-cols-[1fr_420px] lg:gap-14 lg:px-10">
-        <ProductGallery product={product} colorHex={selectedColor.hex} />
+        <ProductGallery product={product} colorHex={selectedColor.hex} colorName={selectedColor.name} />
 
         <div className="lg:sticky lg:top-28 lg:self-start">
           <p className="text-[11px] uppercase tracking-luxury text-taupe">{product.category}</p>
@@ -197,7 +197,13 @@ export default function ProductDetail({ product }: { product: Product }) {
           .filter((img): img is NonNullable<typeof img> => Boolean(img))
           .map((img) => (
             <div key={img.shot} className="relative aspect-[5/4] overflow-hidden bg-ivory">
-              <ProductArt product={product} image={img} colorHex={selectedColor.hex} className="h-full w-full" />
+              <ProductArt
+                product={product}
+                image={img}
+                colorHex={selectedColor.hex}
+                colorName={selectedColor.name}
+                className="h-full w-full"
+              />
             </div>
           ))}
       </section>
