@@ -712,50 +712,50 @@ Save as: `public/products/courchevel-ski-jacket/lifestyle--snow-white.jpg`
 
 Note: generate this same six-shot set once per additional colourway shown on the PDP (Stone, Espresso), reusing the identical prompt with the colour name substituted. Save each set at `public/products/courchevel-ski-jacket/<shot>--<colour-slug>.jpg` so garment cut, styling and background stay identical across every colour of this product.
 
-### The Gstaad Cashmere Crewneck
+### The Gstaad Cashmere Polo
 - Slug: `gstaad-cashmere-crewneck`
 - Category: Cashmere
-- Colourways: Ivory (#EEEAE1), Oatmeal (#CEC4B4), Stone (#AAA195), Espresso (#332A25)
+- Colourways: Ivory (#EEEAE1), Oatmeal (#CEC4B4), Stone (#AAA195), Black (#111111)
 - Materials: 100% cashmere
 - Location: Gstaad, Switzerland
 
 **Image 1 — Front**
 
-> Photorealistic, high-end luxury fashion e-commerce photography for the brand MONTREVE. No visible third-party logos or branding of any kind — only a small, subtle woven MONTREVE label where appropriate. Natural, refined European quiet-luxury art direction, premium colour grading, soft natural light. Clean studio front-view product shot of the MONTREVE The Gstaad Cashmere Crewneck in Ivory, shown on an invisible mannequin or gently draped, centred on a warm ivory/stone seamless background. Crisp focus on cut, silhouette and construction. 85mm lens, even soft shadow, colour-accurate 100% cashmere.
+> Photorealistic, high-end luxury fashion e-commerce photography for the brand MONTREVE. No visible third-party logos or branding of any kind — only a small, subtle woven MONTREVE label where appropriate. Natural, refined European quiet-luxury art direction, premium colour grading, soft natural light. Clean studio front-view product shot of the MONTREVE The Gstaad Cashmere Polo in Ivory, shown on an invisible mannequin or gently draped, centred on a warm ivory/stone seamless background. Crisp focus on cut, silhouette and construction. 85mm lens, even soft shadow, colour-accurate 100% cashmere.
 
 Save as: `public/products/gstaad-cashmere-crewneck/front--ivory.jpg`
 
 **Image 2 — Back**
 
-> Photorealistic, high-end luxury fashion e-commerce photography for the brand MONTREVE. No visible third-party logos or branding of any kind — only a small, subtle woven MONTREVE label where appropriate. Natural, refined European quiet-luxury art direction, premium colour grading, soft natural light. Clean studio back-view product shot of the MONTREVE The Gstaad Cashmere Crewneck in Ivory, same styling, lighting, background and proportions as the matching front-view shot for exact visual consistency. Show back seaming, yoke and hem construction clearly. 85mm lens, warm ivory/stone seamless background.
+> Photorealistic, high-end luxury fashion e-commerce photography for the brand MONTREVE. No visible third-party logos or branding of any kind — only a small, subtle woven MONTREVE label where appropriate. Natural, refined European quiet-luxury art direction, premium colour grading, soft natural light. Clean studio back-view product shot of the MONTREVE The Gstaad Cashmere Polo in Ivory, same styling, lighting, background and proportions as the matching front-view shot for exact visual consistency. Show back seaming, yoke and hem construction clearly. 85mm lens, warm ivory/stone seamless background.
 
 Save as: `public/products/gstaad-cashmere-crewneck/back--ivory.jpg`
 
 **Image 3 — Material Close-up**
 
-> Photorealistic, high-end luxury fashion e-commerce photography for the brand MONTREVE. No visible third-party logos or branding of any kind — only a small, subtle woven MONTREVE label where appropriate. Natural, refined European quiet-luxury art direction, premium colour grading, soft natural light. Extreme macro close-up of the 100% cashmere fabric of the MONTREVE The Gstaad Cashmere Crewneck in Ivory. Visible fibre structure and natural texture, shallow depth of field, soft directional daylight, styled as a luxury fabric-swatch detail shot for an e-commerce product gallery.
+> Photorealistic, high-end luxury fashion e-commerce photography for the brand MONTREVE. No visible third-party logos or branding of any kind — only a small, subtle woven MONTREVE label where appropriate. Natural, refined European quiet-luxury art direction, premium colour grading, soft natural light. Extreme macro close-up of the 100% cashmere fabric of the MONTREVE The Gstaad Cashmere Polo in Ivory. Visible fibre structure and natural texture, shallow depth of field, soft directional daylight, styled as a luxury fabric-swatch detail shot for an e-commerce product gallery.
 
 Save as: `public/products/gstaad-cashmere-crewneck/material--ivory.jpg`
 
 **Image 4 — Hardware / Stitching Close-up**
 
-> Photorealistic, high-end luxury fashion e-commerce photography for the brand MONTREVE. No visible third-party logos or branding of any kind — only a small, subtle woven MONTREVE label where appropriate. Natural, refined European quiet-luxury art direction, premium colour grading, soft natural light. Macro detail shot of the ribbed crew neckline and woven interior MONTREVE label on the MONTREVE The Gstaad Cashmere Crewneck in Ivory, including visible stitching. Shallow depth of field, warm directional light, subtle embossed or engraved "MONTREVE" mark on the hardware where realistic. Neutral ivory background.
+> Photorealistic, high-end luxury fashion e-commerce photography for the brand MONTREVE. No visible third-party logos or branding of any kind — only a small, subtle woven MONTREVE label where appropriate. Natural, refined European quiet-luxury art direction, premium colour grading, soft natural light. Macro detail shot of the horn button placket and woven interior MONTREVE label on the MONTREVE The Gstaad Cashmere Polo in Ivory, including visible stitching. Shallow depth of field, warm directional light, subtle embossed or engraved "MONTREVE" mark on the hardware where realistic. Neutral ivory background.
 
 Save as: `public/products/gstaad-cashmere-crewneck/hardware--ivory.jpg`
 
 **Image 5 — Worn (Studio)**
 
-> Photorealistic, high-end luxury fashion e-commerce photography for the brand MONTREVE. No visible third-party logos or branding of any kind — only a small, subtle woven MONTREVE label where appropriate. Natural, refined European quiet-luxury art direction, premium colour grading, soft natural light. An elegant male model in his twenties, natural European casting, high-fashion casting, wearing the MONTREVE The Gstaad Cashmere Crewneck in Ivory against a soft neutral studio backdrop. Relaxed, confident, unposed stance, natural skin, realistic fabric drape. 85mm fashion photography, shallow depth of field.
+> Photorealistic, high-end luxury fashion e-commerce photography for the brand MONTREVE. No visible third-party logos or branding of any kind — only a small, subtle woven MONTREVE label where appropriate. Natural, refined European quiet-luxury art direction, premium colour grading, soft natural light. An elegant male model in his twenties, natural European casting, high-fashion casting, wearing the MONTREVE The Gstaad Cashmere Polo in Ivory against a soft neutral studio backdrop. Relaxed, confident, unposed stance, natural skin, realistic fabric drape. 85mm fashion photography, shallow depth of field.
 
 Save as: `public/products/gstaad-cashmere-crewneck/worn--ivory.jpg`
 
 **Image 6 — Lifestyle (Alpine)**
 
-> Photorealistic, high-end luxury fashion e-commerce photography for the brand MONTREVE. No visible third-party logos or branding of any kind — only a small, subtle woven MONTREVE label where appropriate. Natural, refined European quiet-luxury art direction, premium colour grading, soft natural light. Editorial lifestyle photograph of a model wearing the MONTREVE The Gstaad Cashmere Crewneck in Ivory, seated at a mountain restaurant terrace table with a glass of wine, in Gstaad, Switzerland. Natural winter sunlight, soft shadows, cinematic 35mm environmental fashion photography, shallow depth of field, quiet, exclusive alpine atmosphere with no crowds.
+> Photorealistic, high-end luxury fashion e-commerce photography for the brand MONTREVE. No visible third-party logos or branding of any kind — only a small, subtle woven MONTREVE label where appropriate. Natural, refined European quiet-luxury art direction, premium colour grading, soft natural light. Editorial lifestyle photograph of a model wearing the MONTREVE The Gstaad Cashmere Polo in Ivory, seated at a mountain restaurant terrace table with a coffee, in Gstaad, Switzerland. Natural winter sunlight, soft shadows, cinematic 35mm environmental fashion photography, shallow depth of field, quiet, exclusive alpine atmosphere with no crowds.
 
 Save as: `public/products/gstaad-cashmere-crewneck/lifestyle--ivory.jpg`
 
-Note: generate this same six-shot set once per additional colourway shown on the PDP (Oatmeal, Stone, Espresso), reusing the identical prompt with the colour name substituted. Save each set at `public/products/gstaad-cashmere-crewneck/<shot>--<colour-slug>.jpg` so garment cut, styling and background stay identical across every colour of this product.
+Note: generate this same six-shot set once per additional colourway shown on the PDP (Oatmeal, Stone, Black), reusing the identical prompt with the colour name substituted. Save each set at `public/products/gstaad-cashmere-crewneck/<shot>--<colour-slug>.jpg` so garment cut, styling and background stay identical across every colour of this product.
 
 ### The Verbier Wool Trouser
 - Slug: `verbier-wool-trouser`
