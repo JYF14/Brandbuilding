@@ -14,6 +14,7 @@ import Accordion from "./Accordion";
 import ProductGrid from "./ProductGrid";
 import ProductArt from "./ProductArt";
 import { getProductsBySlugs } from "@/lib/products";
+import { getStock, isLowStock } from "@/lib/stock";
 
 const FIT_NOTES: Record<string, string> = {
   "Coats & Jackets": "Cut with a considered, tailored line. True to size — size down for a closer fit.",
@@ -40,6 +41,9 @@ export default function ProductDetail({ product }: { product: Product }) {
   const { addToCart } = useCart();
   const { announceAdded } = useUI();
 
+  const selectedStock = selectedSize ? getStock(product.slug, selectedSize) : null;
+  const selectedLowStock = selectedStock !== null && isLowStock(selectedStock);
+
   const related = useMemo(() => getProductsBySlugs(product.relatedSlugs), [product]);
   const completeLook = useMemo(
     () => getProductsBySlugs(product.completeTheLookSlugs),
@@ -47,7 +51,7 @@ export default function ProductDetail({ product }: { product: Product }) {
   );
 
   function handleAddToBag() {
-    if (!selectedSize) {
+    if (!selectedSize || getStock(product.slug, selectedSize) === 0) {
       setSizeError(true);
       return;
     }
@@ -101,6 +105,7 @@ export default function ProductDetail({ product }: { product: Product }) {
             />
             <div>
               <SizeSelector
+                productSlug={product.slug}
                 sizes={product.sizes}
                 selected={selectedSize}
                 onSelect={(s) => {
@@ -112,6 +117,11 @@ export default function ProductDetail({ product }: { product: Product }) {
               {sizeError && (
                 <p className="mt-2 text-[11px] uppercase tracking-luxury text-espresso/70">
                   Please select a size
+                </p>
+              )}
+              {selectedLowStock && !sizeError && (
+                <p className="mt-2 text-[11px] uppercase tracking-luxury text-taupe">
+                  Only {selectedStock} left in size {selectedSize}
                 </p>
               )}
             </div>
