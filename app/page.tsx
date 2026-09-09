@@ -4,9 +4,10 @@ import EditorialBanner from "@/components/EditorialBanner";
 import Newsletter from "@/components/Newsletter";
 import ProductCard from "@/components/ProductCard";
 import ProductArt from "@/components/ProductArt";
-import SceneArt from "@/components/SceneArt";
+import EditorialArt from "@/components/EditorialArt";
 import { PRODUCTS, getProductBySlug } from "@/lib/products";
 import { MATERIALS, ALPINE_STORIES } from "@/lib/collections";
+import { placeToEditorialKey } from "@/lib/editorial-images";
 
 const NEW_ARRIVALS = PRODUCTS.filter((p) => p.isNew).slice(0, 10);
 
@@ -26,7 +27,7 @@ export default function HomePage() {
       {/* WOMEN / MEN */}
       <section className="grid grid-cols-1 sm:grid-cols-2">
         <Link href="/women" className="group relative block aspect-[3/4] overflow-hidden bg-espresso sm:aspect-auto sm:h-[75vh]">
-          <SceneArt seed="home-women" dark={false} figures={1} className="absolute inset-0 h-full w-full image-hover-scale" />
+          <EditorialArt editorialKey="home-women" seed="home-women" dark={false} figures={1} className="absolute inset-0 h-full w-full image-hover-scale" />
           <div className="absolute inset-0 bg-gradient-to-t from-espresso/55 to-transparent" />
           <div className="absolute bottom-10 left-8 text-snow">
             <p className="font-serif text-3xl">Women</p>
@@ -37,7 +38,7 @@ export default function HomePage() {
           </div>
         </Link>
         <Link href="/men" className="group relative block aspect-[3/4] overflow-hidden bg-espresso sm:aspect-auto sm:h-[75vh]">
-          <SceneArt seed="home-men" dark={false} figures={1} className="absolute inset-0 h-full w-full image-hover-scale" />
+          <EditorialArt editorialKey="home-men" seed="home-men" dark={false} figures={1} className="absolute inset-0 h-full w-full image-hover-scale" />
           <div className="absolute inset-0 bg-gradient-to-t from-espresso/55 to-transparent" />
           <div className="absolute bottom-10 left-8 text-snow">
             <p className="font-serif text-3xl">Men</p>
@@ -80,6 +81,7 @@ export default function HomePage() {
 
       <EditorialBanner
         seed="home-courchevel"
+        editorialKey="editorial-courchevel"
         title="Made for Higher Places."
         location="Courchevel 1850, France"
         href="/new-arrivals"
@@ -120,7 +122,8 @@ export default function HomePage() {
           {ALPINE_STORIES.map((story) => (
             <Link key={story.place} href={story.href} className="group block">
               <div className="relative aspect-[3/4] overflow-hidden bg-espresso">
-                <SceneArt
+                <EditorialArt
+                  editorialKey={placeToEditorialKey(story.place as "St. Moritz" | "Megève" | "Gstaad" | "Courchevel")}
                   seed={`story-${story.place}`}
                   dark
                   figures={0}

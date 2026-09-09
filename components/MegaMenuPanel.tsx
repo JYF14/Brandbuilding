@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { MegaMenuData } from "@/lib/collections";
-import SceneArt from "./SceneArt";
+import EditorialArt from "./EditorialArt";
+import { EditorialKey } from "@/lib/editorial-images";
 
 export default function MegaMenuPanel({
   data,
@@ -49,7 +50,8 @@ export default function MegaMenuPanel({
           onClick={onClose}
           className="group relative hidden aspect-[4/3] overflow-hidden lg:block"
         >
-          <SceneArt
+          <EditorialArt
+            editorialKey={`mega-${data.label.toLowerCase()}` as EditorialKey}
             seed={`mega-${data.label}`}
             kicker={data.label}
             caption="Discover the collection"

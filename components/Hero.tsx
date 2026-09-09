@@ -1,10 +1,11 @@
 import Link from "next/link";
-import SceneArt from "./SceneArt";
+import EditorialArt from "./EditorialArt";
 
 export default function Hero() {
   return (
     <section className="relative flex h-[92vh] min-h-[640px] w-full items-end overflow-hidden bg-espresso">
-      <SceneArt
+      <EditorialArt
+        editorialKey="hero-main"
         seed="hero-st-moritz"
         dark
         figures={2}

@@ -1,7 +1,8 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import SceneArt from "@/components/SceneArt";
+import EditorialArt from "@/components/EditorialArt";
 import { ALPINE_STORIES } from "@/lib/collections";
+import { placeToEditorialKey } from "@/lib/editorial-images";
 
 export const metadata: Metadata = {
   title: "Journal — MONTREVE",
@@ -46,7 +47,13 @@ export default function JournalPage() {
         {ARTICLES.map((article) => (
           <Link key={article.place} href="/journal" className="group block">
             <div className="relative aspect-[4/3] overflow-hidden bg-espresso">
-              <SceneArt seed={`journal-${article.place}`} dark figures={1} className="h-full w-full image-hover-scale" />
+              <EditorialArt
+                editorialKey={placeToEditorialKey(article.place as "St. Moritz" | "Megève" | "Gstaad" | "Courchevel")}
+                seed={`journal-${article.place}`}
+                dark
+                figures={1}
+                className="h-full w-full image-hover-scale"
+              />
             </div>
             <p className="mt-5 text-[11px] uppercase tracking-luxury text-taupe">{article.place}</p>
             <p className="mt-1 font-serif text-2xl italic">{article.title}</p>
